@@ -1,0 +1,445 @@
+' Gambas class file
+
+Public Sub Form_Open()
+  
+  Dim sfile, fontname As String
+  Dim i As Integer
+  
+  Form1.Show
+  With Form1
+    .Width = 1200
+    .Height = 700
+    .Background = Color.Background
+  End With
+  
+  Panel9.Layout = [50, 50]
+  Panel15.Layout = [30, 70]
+  
+  ColorPalette2.Clear
+  ColorPalette2.Add(Color.Blue)
+  ColorPalette2.Add(Color.Gray)
+  ColorPalette2.Add(Color.Green)
+  ColorPalette2.Add(Color.Magenta)
+  ColorPalette2.Add(Color.Orange)
+  ColorPalette2.Add(Color.Red)
+  ColorPalette2.Add(Color.Violet)
+  ColorPalette2.Add(Color.Yellow)
+  
+  cboFontSize.Add("Size 1", 0)
+  cboFontSize.Add("Size 2", 1)
+  cboFontSize.Add("Size 3", 2)
+  cboFontSize.Add("Size 4", 3)
+  cboFontSize.Add("Size 5", 4)
+  cboFontSize.Add("Size 6", 5)
+  cboFontSize.Add("Size 7", 6)
+  
+  WebView1.Url = "file:" & Application.Path & "/" & "Resources.html"
+  cboURL.Add("https://www.markdownguide.org/basic-syntax/", 0)
+  cboURL.Add("http://gambaswiki.org/wiki/doc/markdown", 1)
+  cboURL.Add("https://markdown.de/", 2)
+  cboURL.Add("https://daringfireball.net/projects/markdown", 3)
+  cboURL.Add("https://tu-dresden.de/tu-dresden/chancengleichheit/agsbs/uebertragungsservice-1/barrierefreie-dokumente", 4)
+  cboURL.Add("http://www.wiwi.uni-bielefeld.de/lehrbereiche/statoekoinf/comet/mtessmer/Beitraege/Dokumente_erstellen_und_konvertieren_mit_pandoc", 5)
+  
+  cboHeadline.Add("H1", 0)
+  cboHeadline.Add("H2", 1)
+  cboHeadline.Add("H3", 2)
+  cboHeadline.Add("H4", 3)
+  cboHeadline.Add("H5", 4)
+  cboHeadline.Add("H6", 5)
+  
+  FileView1.Dir = User.Home
+  
+  For Each sfile In Dir(FileView1.Dir, "*.html", gb.File)
+    cboHTML.Add(sfile, i)
+    i = i + 1
+  Next
+  
+  For Each fontname In Fonts
+    cboFont.Add(Fontname, i)
+  Next
+  
+End
+
+Public Sub Form_Close()
+  
+  Me.close
+  
+End
+
+Public Sub btnSave_Click()
+  
+  Dim datei As String
+  
+  datei = FileView1.Dir & "/" & txtFile.Text
+  
+  File.Save(datei & ".md", TextArea1.Text)
+  
+  File.Save(datei & ".html", Markdown.ToHTML(File.Load(datei & ".md")))
+  
+  FileView1.Reload
+  
+End
+
+Public Sub btnPDF_Click()
+  
+  Dim datei, pdffile As String
+  
+  If Label1.Text = "" Then 
+    Message("No selected file")
+    Return 
+  Endif
+  datei = Label1.Text
+  pdffile = Replace(datei, ".html", "")
+  pdffile = pdffile & ".pdf"
+  Exec ["wkhtmltopdf", "-s", "A4", datei, pdffile] 'Andere Möglichkeit: pod2pdf installieren
+  
+End
+
+Public Sub btnItalic_Click()
+  
+  TextArea1.Insert("*") 
+  TextArea1.SetFocus
+  
+End
+
+Public Sub btnBold_Click()
+  
+  TextArea1.Insert("**") 
+  TextArea1.SetFocus 
+  
+End
+
+Public Sub btnUnderline_Click()
+  
+  TextArea1.Insert("<ins></ins>") 
+  TextArea1.SetFocus 
+  
+End
+
+Public Sub btnMinus_Click()
+  
+  TextArea1.Insert("- ") 
+  TextArea1.SetFocus
+  
+End
+
+Public Sub btnLink_Click()
+  
+  TextArea1.Insert("[]") 
+  
+End
+
+Public Sub btnBlockquote_Click()
+  
+  TextArea1.Insert(Chr(62) & " ") 
+  TextArea1.SetFocus
+  
+End
+
+Public Sub btnBackslash_Click()
+  
+  TextArea1.Insert(Chr(92))
+  TextArea1.SetFocus
+  
+End
+
+Public Sub btnLinkClose_Click()
+  
+  TextArea1.Insert("]") 
+  TextArea1.SetFocus
+  
+End
+
+Public Sub btnPlus_Click()
+  
+  TextArea1.Insert("+ ") 
+  TextArea1.SetFocus 
+  
+End
+
+Public Sub btnIndent_Click()
+  
+  TextArea1.Insert("<p style=\"text-indent:" & ValueBox1.Value & "px\"></p>")
+  TextArea1.SetFocus 
+  
+End
+
+Public Sub cboFontSize_Click()
+  
+  If cboFontSize.Text = "Size 1" Then
+    TextArea1.Insert("<font size=\"1\"></font>")
+  Endif
+  If cboFontSize.Text = "Size 2" Then
+    TextArea1.Insert("<font size=\"2\"></font>")
+  Endif
+  If cboFontSize.Text = "Size 3" Then
+    TextArea1.Insert("<font size=\"3\"></font>")
+  Endif
+  If cboFontSize.Text = "Size 4" Then
+    TextArea1.Insert("<font size=\"4\"></font>")
+  Endif
+  If cboFontSize.Text = "Size 5" Then
+    TextArea1.Insert("<font size=\"5\"></font>")
+  Endif
+  If cboFontSize.Text = "Size 6" Then
+    TextArea1.Insert("<font size=\"10\"></font>")
+  Endif
+  If cboFontSize.Text = "Size 7" Then
+    TextArea1.Insert("<font size=\"10\"></font>")
+  Endif
+  
+End
+
+Public Sub btnTable_Click()
+  
+  TextArea1.Insert("<table>\n<tr>\n<td></td>\n</tr>\n</table>") 
+  TextArea1.SetFocus 
+  
+End
+
+Public Sub btnLine_Click()
+  
+  TextArea1.Insert("<hr>") 
+  TextArea1.SetFocus
+  
+End
+
+Public Sub ColorPalette2_Click()
+  
+  Dim i As Integer
+  Dim fcolor As String
+  
+  i = ColorPalette2.Current
+  If i = Color.Blue Then
+    fcolor = "#0000FF"
+  Endif
+  If i = Color.Gray Then
+    fcolor = "#808080"
+  Endif
+  If i = Color.Green Then
+    fcolor = "#00FF00"
+  Endif
+  If i = Color.Magenta Then
+    fcolor = "#FF00FF"
+  Endif
+  If i = Color.Orange Then
+    'fcolor = "#FF8000"
+    fcolor = "#e69900"
+  Endif
+  If i = Color.Red Then
+    fcolor = "#FF0000"
+  Endif
+  If i = Color.Violet Then
+    fcolor = "#8000FF"
+  Endif
+  If i = Color.Yellow Then
+    fcolor = "#FFFF00"
+  Endif
+  
+  TextArea1.Insert("<FONT COLOR=" & fcolor & ">" & "</font>")
+  TextArea1.SetFocus
+  
+End
+
+Public Sub btnLinkInline_Click()
+  
+  TextArea1.Insert("()")
+  TextArea1.SetFocus
+  '  
+  
+End
+
+Public Sub btnMetaUTF_Click()'Insert Meta content for German Umlauts etc
+  
+  Dim str As String 
+  
+  str = Str("<meta http-equiv=" & "content-type" & "content=" & "text/html; charset =utf-8>" & gb.NewLine)
+  TextArea1.Insert(str)
+  
+End
+
+Public Sub btnPicture_Click()'Insert picture
+  
+  If Dialog.OpenFile() Then Return
+  
+  TextArea1.Insert("<img src=\"" & Dialog.Path & "\"/>") 
+  TextArea1.SetFocus
+  
+End
+
+Public Sub btnParagraph_Click() 'Insert blank line
+  
+  TextArea1.Insert(gb.NewLine & gb.NewLine)
+  TextArea1.SetFocus
+  
+End
+
+Public Sub btnMetaContent_Click()'Insert Title, Autor and Date
+  
+  TextArea1.Insert("<meta name=\"title\" content=\"Document title\">" & gb.NewLine)
+  TextArea1.Insert("<meta name=\"author\" content=\"Your Name\">" & gb.NewLine)
+  TextArea1.Insert("<meta name=\"date\" content=\"" & Date & "\">" & gb.NewLine)
+  TextArea1.SetFocus
+  
+End
+
+Public Sub TextArea1_KeyRelease()
+  
+  If Key.Code = Key.Return Then
+    TextArea1.Insert("> ")
+  Endif
+  
+End
+
+Public Sub cboHeadline_Click()
+  
+  If cboHeadline.Index = 0 Then 
+    TextArea1.Insert("# ") 
+    TextArea1.SetFocus
+    Return 
+  Endif
+  
+  If cboHeadline.Index = 1 Then 
+    TextArea1.Insert("## ") 
+    TextArea1.SetFocus
+    Return 
+  Endif
+  
+  If cboHeadline.Index = 2 Then 
+    TextArea1.Insert("### ") 
+    TextArea1.SetFocus
+    Return 
+  Endif
+  
+  If cboHeadline.Index = 3 Then 
+    TextArea1.Insert("#### ") 
+    TextArea1.SetFocus
+    Return 
+  Endif
+  
+  If cboHeadline.Index = 4 Then 
+    TextArea1.Insert("##### ") 
+    TextArea1.SetFocus
+    Return 
+  Endif
+  
+  If cboHeadline.Index = 5 Then 
+    TextArea1.Insert("###### ") 
+    TextArea1.SetFocus
+    Return 
+  Endif
+  
+End
+
+Public Sub cboFont_Click()
+  
+  TextArea1.Insert("<font face=" & cboFont.Current.Text & "></font>")
+  TextArea1.SetFocus
+  
+End
+
+Public Sub ColorButton1_Click()
+  
+  TextArea1.Insert("<FONT COLOR=#" & Hex(ColorButton1.Value) & ">" & "</font>")
+  TextArea1.SetFocus
+  
+End
+
+Public Sub btnBack_Click()
+  
+  WebView1.Back
+  
+End
+
+Public Sub btnNext_Click()
+  
+  WebView1.Forward
+  
+End
+
+Public Sub btnSearch_Click()
+  
+  WebView1.Url = "https://duckduckgo.com/?q=" & cboURL.Text
+  
+End
+
+Public Sub cboURL_Click()
+  
+  WebView1.Url = cboURL.Current.Text
+  
+End
+
+Public Sub cboHTML_Click()
+  
+  WebView1.Refresh
+  WebView1.Url = "file://" & FileView1.Dir & "/" & cboHTML.Current.Text
+  Label1.Text = FileView1.Dir & "/" & cboHTML.Current.Text
+  
+End
+
+Public Sub btnClear_Click()
+  
+  TextArea1.Clear
+  txtFile.Clear
+  
+End
+
+Public Sub ColorPalette1_Click()
+  
+  Dim i As Integer
+  
+  i = ColorPalette1.Current
+  Form1.Background = i
+  
+End
+
+Public Sub btnDir_Click()
+  
+  Dim i As Integer
+  Dim sfile As String
+  
+  If Dialog.SelectDirectory() Then Return 
+  FileView1.Dir = Dialog.path
+  
+  For Each sfile In Dir(FileView1.Dir, "*.html", gb.File)
+    cboHTML.Add(sfile, i)
+    i = i + 1
+  Next
+  
+End
+
+Public Sub FileView1_Click()
+  
+  Dim sfile, str As String
+  Dim pos, laenge As Integer
+  
+  sfile = File.Name(FileView1.Dir & "/" & FileView1.Current)
+  If Not Exist(FileView1.Dir & "/" & FileView1.Current) Then Return 
+  
+  pos = InStr(sfile, ".")
+  If pos = 0 Then 
+    txtFile.Text = sfile
+    TextArea1.Text = File.Load(FileView1.Dir & "/" & FileView1.Current)
+    Label4.Text = FileView1.Dir & "/" & FileView1.Current
+    Return 
+  Else 
+    laenge = Len(sfile) + 1
+    laenge = laenge - pos
+    str = Replace(sfile, Right(sfile, laenge), "")
+    txtFile.Text = str
+    TextArea1.Text = File.Load(FileView1.Dir & "/" & FileView1.Current)
+    Label4.Text = FileView1.Dir & "/" & FileView1.Current
+  Endif
+  
+End
+
+Public Sub btnRefresh_Click()
+  
+  If Not Exist(FileView1.Dir & "/" & cboHTML.Current.Text) Then Return 
+  
+  WebView1.Refresh
+  WebView1.Url = "file://" & FileView1.Dir & "/" & cboHTML.Current.Text
+  Label1.Text = FileView1.Dir & "/" & cboHTML.Current.Text
+  
+End

@@ -1,0 +1,69 @@
+# depslib dependency file v1.0
+1641952454 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/wx_pch.h
+	<stdio.h>
+	<wx/wx.h>
+
+1641952412 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/main.c
+	<stdio.h>
+	<stdlib.h>
+
+1641952826 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/abill3dApp.cpp
+	"wx_pch.h"
+	"abill3dApp.h"
+	"abill3dMain.h"
+
+1641952454 /home/denis/GambasProjects/ability/matrix/cpi/abill3d/wx_pch.h
+	<stdio.h>
+	<wx/wx.h>
+
+1641952647 /home/denis/GambasProjects/ability/matrix/cpi/abill3d/abill3dApp.h
+	<stdio.h>
+
+1641952764 /home/denis/GambasProjects/ability/matrix/cpi/abill3d/abill3dMain.h
+	"abill3dApp.h"
+	"GUIDialog.h"
+
+1641952705 /home/denis/GambasProjects/ability/matrix/cpi/abill3d/GUIDialog.h
+	<wx_pch.h>
+	<stdio.h>
+	<stdio.h>
+	<stdio.h>
+
+1641952913 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/abill3dMain.cpp
+	"wx_pch.h"
+	"abill3dMain.h"
+
+1641953022 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/GUIDialog.cpp
+	"stdio.h"
+	<wx/wx.h>
+	"GUIDialog.h"
+
+1641971052 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/script_code.c
+	"stdio.h"
+	"stdlib.h"
+	"kptmaindocument.moc"
+
+1641970965 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/verify_args.cc
+
+1641971052 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/silent_verify.c
+	"stdio.h"
+	"versioncontrolobserver.moc"
+
+1641971758 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/args_mtype.cc
+	"import_plugins.h"
+
+1641972337 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/args_script.cc
+	"stdint-gcc.h"
+
+1641973127 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/clear_text.cc
+
+1641973483 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/backend.cc
+	<stdarg.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1641974237 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/test_backend.cc
+
+1641974237 source:/home/denis/GambasProjects/ability/matrix/cpi/abill3d/test_frontend.cc
+

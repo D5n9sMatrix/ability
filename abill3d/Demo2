@@ -1,0 +1,38 @@
+> <meta http-equiv=content-typecontent=text/html; charset =utf-8>
+> <meta name="title" content="Document title">
+> <meta name="author" content="Your Name">
+> <meta name="date" content="11/15/2020 23:00:00">
+[1]: https://linugambi.blogspot.com
+[2]: http://gambas.sourceforge.net/en/main.html
+> # Demo
+> > This is a simple text.
+
+> <FONT COLOR=#00FF00>A green line.</font>\
+> <FONT COLOR=#FF0000>A red line.</font>\
+> **A bold line.\
+> <ins>*This is an italic and underlined line.</ins>
+> <hr>
+> <table>
+> <tr>
+> <td>This is a table</td>
+> </tr>
+> </table>
+> <table border=1>
+> <tr>
+> <td>and this with border.</td>
+> </tr>
+> </table>
+> <hr>
+> [linugambi] [1]\
+> [Gambas] [2]
+> + A list
+> + A list too
+> - [Gambas Playgound] (https://gambas.one/playground/)
+> <p style="text-indent:100px"><font size="4">Another list entry.</font></p>
+> <ol><li>Another list entry</li></ol>
+> <ul><li>Next entry</li></ul>
+> <hr>
+> 'Now I come to an end:'\
+> ## <font face=Arial>Thank you!</font> <font face=Bandal>Thank you!</font>
+> <hr>
+

@@ -1,0 +1,69 @@
+ <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="title" content="Resourcen">
+<meta name="author" content="Manfred Heyen">
+<meta name="date" content="11/14/2020 23:00:00">
+
+> # Resources
+
+> **<FONT COLOR=#808080>This document is generated with Gambas gb.Markdown,\
+>  and the new version of ContentDesigner (2.0).\
+> <ins>Thank you for downloading the old version!!</ins>\
+> You find this document in the project.\
+> To create a PDF you need wkhtmltopdf.</font>
+
+> [linugambi](https://linugambi.blogspot.com)
+
+> *[manfredh465@gmail.com](manfredh465@gmail.com)
+<hr>
+
++ [Gambas Markdown](http://gambaswiki.org/wiki/doc/markdown)
+
++ [Daringfireball] (https://daringfireball.net/projects/markdown/)
+
++ [TU Dresden Markdown](https://tu-dresden.de/tu-dresden/chancengleichheit/agsbs/uebertragungsservice-1/barrierefreie-dokumente)
+
+- [gambas.one/playground (en)](https://gambas.one/playground/examplesultra.html)
+
+- [Gambas Documents (en)](http://gambaswiki.org/wiki/doc)
+
+- [Gambas Wikibook (de)](https://de.wikibooks.org/wiki/Gambas)
+
+- [Gambas Buch (de) (en)](https://www.gambas-buch.de/doku.php)
+
+- [Mailing List, Channels, other Sites](http://gambaswiki.org/wiki/doc/forum?nh)
+
+> + [HTML Farbtabelle (de) (en)](http://www.farb-tabelle.de/de/farbtabelle.htm)
+
+> + [Alles  über Unicode - ASCII - (de) (en)](http://unicode.e-workers.de/ascii.php)
+
+> + [wkhtmltopdf (en)](https://wkhtmltopdf.org/)
+
++ [a2ps manual (en)](https://linux.die.net/man/1/a2ps)
+
++ [html2ps manual (en)](https://linux.die.net/man/1/html2ps)
+
++ [Uni Bielefeld Pandoc (de)](http://www.wiwi.uni-bielefeld.de/lehrbereiche/statoekoinf/comet/mtessmer/Beitraege/Dokumente_erstellen_und_konvertieren_mit_pandoc)
+
+<hr>
+
+<table border=1>
+<tr>
+<td align=center><b>German Umlauts</b></td>
+</tr>
+<tr>
+<td>For German umlauts and other language characteristics copy this line at the top of your document\
+&lt;meta http-equiv="content-type" content="text/html; charset=utf-8"></td>
+</tr>
+</table>
+
+[[
+German Umlauts
+==
+For German umlauts and other language characteristics copy this line at the top of your document\
+&lt;meta http-equiv="content-type" content="text/html; charset=utf-8">
+--
+]]
+<hr>
+<img src="/home/manfred465/linugambi/ContentDesigner/web-design2.png"/>
+> 'ContentDesigner Icon'
+<hr>

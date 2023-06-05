@@ -1,0 +1,295 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,204,121)
+  Icon = Picture["web-design2.png"]
+  Arrangement = Arrange.Vertical
+  Margin = True
+  Padding = 10
+  { Panel14 HBox
+    MoveScaled(2,12,200,92)
+    Expand = True
+    { Panel15 Splitter
+      MoveScaled(2,0,197,91)
+      Expand = True
+      { Panel16 VBox
+        MoveScaled(3,24,24,56)
+        { Panel17 HBox
+          MoveScaled(1,1,23,4)
+          { btnDir Button
+            MoveScaled(-1,0,6,4)
+            Picture = Picture["icon:/32/open"]
+          }
+          { Label2 Label
+            MoveScaled(7,0,8,3)
+            Expand = True
+          }
+        }
+        { FileView1 FileView
+          MoveScaled(2,8,16,16)
+          Expand = True
+          ShowDetailed = True
+        }
+      }
+      { Panel9 Splitter
+        MoveScaled(29,2,167,83)
+        Expand = True
+        { Panel7 VBox
+          MoveScaled(1,2,96,78)
+          { Panel5 HBox
+            MoveScaled(0,9,94,68)
+            Expand = True
+            { Panel10 VBox
+              MoveScaled(3,1,87,62)
+              Background = Color.Background
+              Expand = True
+              { Panel4 HBox
+                MoveScaled(1,3,85,4)
+                { btnMetaUTF Button
+                  MoveScaled(0,0,11,4)
+                  NoTabFocus = True
+                  ToolTip = ("Charset utf-8")
+                  Text = ("Meta UTF")
+                }
+                { btnMetaContent Button
+                  MoveScaled(12,0,11,4)
+                  NoTabFocus = True
+                  ToolTip = ("Title, Author, Date")
+                  Text = ("Meta TAD")
+                }
+                { ColorPalette2 ColorPalette
+                  MoveScaled(23,0,24,4)
+                  Background = Color.Background
+                  ToolTip = ("Font color")
+                }
+                { ColorButton1 ColorButton
+                  MoveScaled(48,0,5,4)
+                }
+                { cboFont ComboBox
+                  MoveScaled(53,0,21.4286,4)
+                  Sorted = True
+                }
+                { cboFontSize ComboBox
+                  MoveScaled(75,0,9,4)
+                  ToolTip = ("Fontsize")
+                }
+              }
+              { Panel11 HBox
+                MoveScaled(2,10,101,4.2857)
+                Padding = 5
+                { btnBlockquote Button
+                  MoveScaled(0,0,4.2857,4.2857)
+                  NoTabFocus = True
+                  ToolTip = ("Blockquote")
+                  Text = (">")
+                }
+                { cboHeadline ComboBox
+                  MoveScaled(5,0,7,4)
+                }
+                { btnItalic Button
+                  MoveScaled(14,0,4.2857,4.2857)
+                  Font = Font["Italic"]
+                  NoTabFocus = True
+                  ToolTip = ("Italic")
+                  Text = ("I")
+                }
+                { btnBold Button
+                  MoveScaled(19,0,4.2857,4.2857)
+                  Font = Font["Bold"]
+                  NoTabFocus = True
+                  ToolTip = ("Bold")
+                  Text = ("B")
+                }
+                { btnUnderline Button
+                  MoveScaled(23,0,4.2857,4.2857)
+                  Font = Font["Underline"]
+                  NoTabFocus = True
+                  ToolTip = ("Underline")
+                  Text = ("U")
+                }
+                { btnPlus Button
+                  MoveScaled(28,0,4.2857,4.2857)
+                  NoTabFocus = True
+                  ToolTip = ("Odered list")
+                  Text = ("+")
+                }
+                { btnMinus Button
+                  MoveScaled(33,0,4.2857,4.2857)
+                  NoTabFocus = True
+                  ToolTip = ("List Bullets")
+                  Text = ("-")
+                }
+                { btnBackslash Button
+                  MoveScaled(38,0,4.2857,4.2857)
+                  NoTabFocus = True
+                  ToolTip = ("Backslash")
+                  Text = ("\\")
+                }
+                { btnLink Button
+                  MoveScaled(43,0,4.2857,4.2857)
+                  NoTabFocus = True
+                  ToolTip = ("Square brackets")
+                  Text = ("[ ]")
+                }
+                { btnLinkInline Button
+                  MoveScaled(48,0,4.2857,4.2857)
+                  NoTabFocus = True
+                  ToolTip = ("Brackets")
+                  Text = ("( )")
+                }
+                { btnLine Button
+                  MoveScaled(53,0,4.2857,4.2857)
+                  NoTabFocus = True
+                  ToolTip = ("Horizontal rule")
+                  Text = ("HR")
+                }
+                { btnParagraph Button
+                  MoveScaled(57,0,5,4.2857)
+                  ToolTip = ("Empty line")
+                  Text = ("---\\")
+                }
+                { btnTable Button
+                  MoveScaled(61,0,4.2857,4.2857)
+                  NoTabFocus = True
+                  ToolTip = ("Insert table")
+                  Picture = Picture["icon:/32/table"]
+                }
+                { btnPicture Button
+                  MoveScaled(65,0,4.2857,4.2857)
+                  NoTabFocus = True
+                  ToolTip = ("Insert picture")
+                  Picture = Picture["icon:/32/insert-image"]
+                }
+                { ValueBox1 ValueBox
+                  MoveScaled(70,0,7,4)
+                  ToolTip = ("Set indent px")
+                }
+                { btnIndent Button
+                  MoveScaled(78,0,5,4)
+                  NoTabFocus = True
+                  ToolTip = ("Indent")
+                  Picture = Picture["icon:/32/indent"]
+                }
+                { Label3 Label
+                  MoveScaled(93,0,6,4)
+                  Expand = True
+                }
+              }
+              { TextArea1 TextArea
+                MoveScaled(34,21,16,16)
+                Expand = True
+              }
+              { Panel12 HBox
+                MoveScaled(4,49,80,4)
+                Background = Color.Background
+                { txtFile TextBox
+                  MoveScaled(2,0,13,4)
+                  NoTabFocus = True
+                  Expand = True
+                }
+                { btnSave Button
+                  MoveScaled(63,0,5,4)
+                  NoTabFocus = True
+                  ToolTip = ("Save Code and Create HTML")
+                  Picture = Picture["icon:/32/save"]
+                }
+                { btnClear Button
+                  MoveScaled(69,0,5,4)
+                  NoTabFocus = True
+                  ToolTip = ("Clear TextArea")
+                  Picture = Picture["icon:/32/clear"]
+                }
+              }
+              { Panel18 HBox
+                MoveScaled(5,56,23,4)
+                { Label4 Label
+                  MoveScaled(0,0,6,3)
+                  Expand = True
+                  Border = Border.Plain
+                }
+              }
+            }
+          }
+        }
+        { Panel8 VBox
+          MoveScaled(100,4,66,74)
+          { Panel1 HBox
+            MoveScaled(2,2,70,4)
+            Background = Color.Background
+            AutoResize = True
+            { ColorPalette1 ColorPalette
+              MoveScaled(-4,0,19,4)
+              Visible = False
+              Background = Color.Background
+              ToolTip = ("Background")
+            }
+            { Label6 Label
+              MoveScaled(16,0,5,4)
+              Visible = False
+              Background = Color.Background
+              Expand = True
+            }
+            { cboHTML ComboBox
+              MoveScaled(16,0,33.5714,4)
+              NoTabFocus = True
+              Expand = True
+              Sorted = True
+            }
+            { btnRefresh Button
+              MoveScaled(50,0,5,4)
+              Picture = Picture["icon:/32/refresh"]
+            }
+          }
+          { Panel6 VBox
+            MoveScaled(6,16,51,51)
+            Background = Color.TextBackground
+            Expand = True
+            { Panel3 HBox
+              MoveScaled(2,2,51,4)
+              { btnBack Button
+                MoveScaled(0,0,4,4)
+                NoTabFocus = True
+                ToolTip = ("Back")
+                Picture = Picture["icon:/32/previous"]
+              }
+              { cboURL ComboBox
+                MoveScaled(5,0,24,4)
+                Expand = True
+              }
+              { btnSearch Button
+                MoveScaled(31,0,5,4)
+                Picture = Picture["icon:/32/find"]
+              }
+              { btnNext Button
+                MoveScaled(37,0,4,4)
+                NoTabFocus = True
+                ToolTip = ("Next")
+                Picture = Picture["icon:/32/next"]
+              }
+            }
+            { WebView1 WebView
+              MoveScaled(15,32,16,16)
+              Expand = True
+            }
+          }
+          { Panel13 Panel
+            MoveScaled(3,68,60,4)
+            Arrangement = Arrange.Horizontal
+            { Label1 Label
+              MoveScaled(11,0,8,3)
+              Background = Color.Background
+              Expand = True
+              Border = Border.Plain
+            }
+            { btnPDF Button
+              MoveScaled(53,0,5,4)
+              NoTabFocus = True
+              ToolTip = ("Create PDF from HTML")
+              Picture = Picture["icon:/32/pdf"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
